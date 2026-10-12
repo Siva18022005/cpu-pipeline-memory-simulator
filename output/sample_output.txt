@@ -1,0 +1,907 @@
+----- 5-stage Pipelined CPU Simulation Start -----
+
+=== Cycle 1 ===
+WB: (bubble)
+MEM: (bubble)
+EX: (bubble)
+ID: (bubble)
+IF: Fetched instruction at PC=0
+
+Pipeline registers after update:
+ IF/ID : valid, PC=0
+ ID/EX : bubble
+ EX/MEM: bubble
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:10
+x7:3
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 2 ===
+WB: (bubble)
+MEM: (bubble)
+EX: (bubble)
+ID: Decoded instr at PC=0
+IF: Fetched instruction at PC=4
+
+Pipeline registers after update:
+ IF/ID : valid, PC=4
+ ID/EX : valid, PC=0
+ EX/MEM: bubble
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:10
+x7:3
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 3 ===
+WB: (bubble)
+MEM: (bubble)
+EX: ALU op result = 0 (op1=0, op2=0)
+ID: Decoded instr at PC=4
+IF: Fetched instruction at PC=8
+
+Pipeline registers after update:
+ IF/ID : valid, PC=8
+ ID/EX : valid, PC=4
+ EX/MEM: valid, ALUres=0
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:10
+x7:3
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 4 ===
+WB: (bubble)
+MEM: EX->ALUresult=0, memRead=0, memWrite=0
+EX: ALU op result = 0 (op1=0, op2=0)
+ID: Decoded instr at PC=8
+IF: Fetched instruction at PC=12
+Hazard: RAW dependency detected -> inserting one-cycle stall
+
+Pipeline registers after update:
+ IF/ID : valid, PC=8
+ ID/EX : bubble
+ EX/MEM: valid, ALUres=0
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:10
+x7:3
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 5 ===
+WB: write x1 = 0
+MEM: EX->ALUresult=0, memRead=0, memWrite=0
+EX: (bubble)
+ID: Decoded instr at PC=8
+IF: Fetched instruction at PC=12
+
+Pipeline registers after update:
+ IF/ID : valid, PC=12
+ ID/EX : valid, PC=8
+ EX/MEM: bubble
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:10
+x7:3
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 6 ===
+WB: write x5 = 0
+MEM: (bubble)
+EX: ALU op result = 0 (op1=0, op2=0)
+ID: Decoded instr at PC=12
+IF: Fetched instruction at PC=16
+
+Pipeline registers after update:
+ IF/ID : valid, PC=16
+ ID/EX : valid, PC=12
+ EX/MEM: valid, ALUres=0
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:10
+x7:3
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 7 ===
+WB: (bubble)
+MEM: EX->ALUresult=0, memRead=0, memWrite=0
+EX: ALU op result = 20 (op1=10, op2=10)
+ID: Decoded instr at PC=16
+IF: Fetched instruction at PC=20
+Hazard: RAW dependency detected -> inserting one-cycle stall
+
+Pipeline registers after update:
+ IF/ID : valid, PC=16
+ ID/EX : bubble
+ EX/MEM: valid, ALUres=20
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:10
+x7:3
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 8 ===
+WB: write x6 = 0
+MEM: EX->ALUresult=20, memRead=0, memWrite=0
+EX: (bubble)
+ID: Decoded instr at PC=16
+IF: Fetched instruction at PC=20
+
+Pipeline registers after update:
+ IF/ID : valid, PC=20
+ ID/EX : valid, PC=16
+ EX/MEM: bubble
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:3
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 9 ===
+WB: write x7 = 20
+MEM: (bubble)
+EX: ALU op result = 10 (op1=3, op2=7)
+ID: Decoded instr at PC=20
+IF: Fetched instruction at PC=24
+Hazard: RAW dependency detected -> inserting one-cycle stall
+
+Pipeline registers after update:
+ IF/ID : valid, PC=20
+ ID/EX : bubble
+ EX/MEM: valid, ALUres=10
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 10 ===
+WB: (bubble)
+MEM: EX->ALUresult=10, memRead=0, memWrite=0
+EX: (bubble)
+ID: Decoded instr at PC=20
+IF: Fetched instruction at PC=24
+
+Pipeline registers after update:
+ IF/ID : valid, PC=24
+ ID/EX : valid, PC=20
+ EX/MEM: bubble
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:0
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 11 ===
+WB: write x8 = 10
+MEM: (bubble)
+EX: ALU op result = 8 (op1=0, op2=8)
+ID: Decoded instr at PC=24
+IF: Fetched instruction at PC=28
+Hazard: RAW dependency detected -> inserting one-cycle stall
+
+Pipeline registers after update:
+ IF/ID : valid, PC=24
+ ID/EX : bubble
+ EX/MEM: valid, ALUres=8
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 12 ===
+WB: (bubble)
+MEM: EX->ALUresult=8, memRead=1, memWrite=0
+MEM: Loaded mem[8] = 0
+EX: (bubble)
+ID: Decoded instr at PC=24
+IF: Fetched instruction at PC=28
+
+Pipeline registers after update:
+ IF/ID : valid, PC=28
+ ID/EX : valid, PC=24
+ EX/MEM: bubble
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 13 ===
+WB: write x9 = 0
+MEM: (bubble)
+EX: ALU op result = 10 (op1=0, op2=10)
+ID: Decoded instr at PC=28
+IF: Fetched instruction at PC=32
+Hazard: RAW dependency detected -> inserting one-cycle stall
+
+Pipeline registers after update:
+ IF/ID : valid, PC=28
+ ID/EX : bubble
+ EX/MEM: valid, ALUres=10
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 14 ===
+WB: (bubble)
+MEM: EX->ALUresult=10, memRead=0, memWrite=1
+MEM: Stored mem[10] = 0
+EX: (bubble)
+ID: Decoded instr at PC=28
+IF: Fetched instruction at PC=32
+
+Pipeline registers after update:
+ IF/ID : valid, PC=32
+ ID/EX : valid, PC=28
+ EX/MEM: bubble
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 15 ===
+WB: (no reg write)
+MEM: (bubble)
+EX: ALU op result = -10 (op1=0, op2=10)
+EX: Branch NOT taken
+ID: Decoded instr at PC=32
+IF: Fetched instruction at PC=36
+
+Pipeline registers after update:
+ IF/ID : valid, PC=36
+ ID/EX : valid, PC=32
+ EX/MEM: valid, ALUres=-10
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 16 ===
+WB: (bubble)
+MEM: EX->ALUresult=-10, memRead=0, memWrite=0
+EX: ALU op result = 0 (op1=0, op2=0)
+ID: Decoded instr at PC=36
+IF: No instruction fetched at PC=40 (bubble or out-of-range)
+
+Pipeline registers after update:
+ IF/ID : bubble
+ ID/EX : valid, PC=36
+ EX/MEM: valid, ALUres=0
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 17 ===
+WB: (no reg write)
+MEM: EX->ALUresult=0, memRead=0, memWrite=0
+EX: ALU op result = 0 (op1=0, op2=0)
+ID: (bubble)
+IF: No instruction fetched at PC=44 (bubble or out-of-range)
+Hazard: RAW dependency detected -> inserting one-cycle stall
+
+Pipeline registers after update:
+ IF/ID : bubble
+ ID/EX : bubble
+ EX/MEM: valid, ALUres=0
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 18 ===
+WB: write x10 = 0
+MEM: EX->ALUresult=0, memRead=0, memWrite=0
+EX: (bubble)
+ID: (bubble)
+IF: No instruction fetched at PC=44 (bubble or out-of-range)
+
+Pipeline registers after update:
+ IF/ID : bubble
+ ID/EX : bubble
+ EX/MEM: bubble
+ MEM/WB: valid
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+=== Cycle 19 ===
+WB: write x11 = 0
+MEM: (bubble)
+EX: (bubble)
+ID: (bubble)
+IF: No instruction fetched at PC=48 (bubble or out-of-range)
+
+Pipeline registers after update:
+ IF/ID : bubble
+ ID/EX : bubble
+ EX/MEM: bubble
+ MEM/WB: bubble
+
+Registers (x0..x31):
+x0:0
+x1:0
+x2:0
+x3:0
+x4:0
+x5:0
+x6:0
+x7:20
+x8:10
+x9:0
+x10:0
+x11:0
+x12:0
+x13:0
+x14:0
+x15:0
+x16:0
+x17:0
+x18:0
+x19:0
+x20:0
+x21:0
+x22:0
+x23:0
+x24:0
+x25:0
+x26:0
+x27:0
+x28:0
+x29:0
+x30:0
+x31:0
+
+All instructions finished and pipeline empty -> halting.
+
+----- Simulation End (cycles = 19) -----
